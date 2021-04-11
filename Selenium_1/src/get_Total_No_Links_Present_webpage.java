@@ -1,0 +1,30 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class get_Total_No_Links_Present_webpage 
+{
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", 
+				"D:\\selenium\\chromedr"+ "iver_win32 (1)\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.instagram.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+		// to find All Link present in Webpage....
+		List<WebElement> Alllink = driver.findElements(By.xpath("//a"));
+		
+		System.out.println(Alllink.size());
+		
+		
+		
+	}
+
+}
